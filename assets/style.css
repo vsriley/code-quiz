@@ -1,0 +1,21 @@
+.title{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.info{
+    text-align: center;
+}
+#purpleButton{
+    background-color: #5C246E;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+#time{
+    text-align: right;
+}
+a{
+    color: #5C246E;
+    text-decoration: none;
+}
