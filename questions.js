@@ -61,15 +61,26 @@ function displayQuestion(){
     };
 };
 
+//function that clears the quiz, displays that the user is all finished, shows their score and asks for their initials
+//store score and initials in local storage
+function finishedQuiz(){
+    question.textContent = "All Done!";
+    results.textContent = "";
+
+};
+
 //quiz started
 startQuiz.addEventListener("click", function(event){
     event.stopPropagation();
     console.log("Start button clicked");
     startQuiz.remove();
-    setInterval(function() {
+    var myInterval = setInterval(function() {
         time--;
         console.log(time);
         displayCounter.textContent = time;
+    if(questionNumber >= questions.length){
+        clearInterval(myInterval);
+    }
     }, 1000);
     //gets rid of quiz info on page
     quizInfo.textContent = "";
@@ -89,13 +100,16 @@ document.addEventListener('click', function (event) {
     }
     questionNumber++;
     displayQuestion();
+    //if they have reached the end of the quiz
+    if(questionNumber >= questions.length){
+        finishedQuiz();
+    }
 }, false);
 
 
 
 
 
-//title All Done!
 //Shows score
 //Enter Initials form with submit button
 
