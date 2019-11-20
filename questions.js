@@ -64,8 +64,22 @@ function displayQuestion(){
 //function that clears the quiz, displays that the user is all finished, shows their score and asks for their initials
 //store score and initials in local storage
 function finishedQuiz(){
-    question.textContent = "All Done!";
+    var score = displayCounter.textContent;
+    console.log("Final Score: " + displayCounter.textContent);
+    displayCounter.textContent = 0;
+    question.textContent = "All Done! Your score is " + score;
     results.textContent = "";
+
+    //create form which asks for users initials
+
+    //var form = document.createElement("form");
+    //var initials = document.createElement("input");
+    //initials.setAttribute("type", "text");
+    //initials.setAttribute("value", "Submit");
+    //initials.setAttribute("id", "initialForm");
+    //initials.textContent = "Enter your initials: ";
+    //form.appendChild(initials);
+    //optionBox.appendChild(form);
 
 };
 
@@ -110,9 +124,9 @@ document.addEventListener('click', function (event) {
 
 
 
-//Shows score
 //Enter Initials form with submit button
 
-//After entering submit got to High Score screen
-//display high score correctly, all high scores in an array and use JSON.stringify...
-//Go Back button and Clear Highscores button
+//After entering submit go to High Score screen
+//display high score in correct order, all high scores in an array and use JSON.stringify...
+//Create Go Back button (restart quiz?) and Clear Highscores button
+//clear highscores button will clear local storage
