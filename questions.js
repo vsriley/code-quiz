@@ -66,8 +66,8 @@ function displayQuestion(){
 function finishedQuiz(){
     var score = displayCounter.textContent;
     console.log("Final Score: " + displayCounter.textContent);
-    displayCounter.textContent = 0;
-    question.textContent = "All Done! Your score is " + score;
+    question.textContent = "All Done! Your score is " + displayCounter.textContent;
+    displayCounter.textContent = "";
     results.textContent = "";
 
     //create form which asks for users initials
@@ -94,6 +94,7 @@ startQuiz.addEventListener("click", function(event){
         displayCounter.textContent = time;
     if(questionNumber >= questions.length){
         clearInterval(myInterval);
+        finishedQuiz();
     }
     }, 1000);
     //gets rid of quiz info on page
@@ -116,7 +117,7 @@ document.addEventListener('click', function (event) {
     displayQuestion();
     //if they have reached the end of the quiz
     if(questionNumber >= questions.length){
-        finishedQuiz();
+        return;
     }
 }, false);
 
