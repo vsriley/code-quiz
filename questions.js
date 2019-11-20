@@ -26,7 +26,7 @@ var questions = [
     }
   ];
 
-var startQuiz = document.querySelector("#purpleButton");
+var startQuiz = document.querySelector("#startButton");
 var question = document.querySelector("#title");
 var quizInfo = document.querySelector("#info");
 var optionBox = document.querySelector("#answers");
@@ -48,5 +48,12 @@ startQuiz.addEventListener("click", function(){
             optionBox.appendChild(option);
         }
     }
-})
+});
+
+
+setInterval(function() {
+    time--;
+    var displayCounter = document.querySelector("#counter");
+    displayCounter.textContent(time);
+    }, 1000);
   
