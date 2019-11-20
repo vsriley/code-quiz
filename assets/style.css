@@ -6,11 +6,14 @@
 .info{
     text-align: center;
 }
-#purpleButton{
+#startButton{
     background-color: #5C246E;
     display: block;
     margin: auto;
     margin-top: 10px;
+}
+#btn-option{
+    background-color:#5C246E; 
 }
 #time{
     text-align: right;

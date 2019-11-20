@@ -14,5 +14,11 @@
 //Enter Initials form with submit button
 
 //After entering submit got to High Score screen
-//display high score correctly with up to five other high scores?
+//display high score correctly, all high scores in an array and use JSON.stringify...
 //Go Back button and Clear Highscores button
+
+var startQuiz = document.querySelector("#purpleButton");
+
+startQuiz.addEventListener("click", function(){
+    
+})
