@@ -35,7 +35,25 @@ var displayCounter = document.querySelector("#counter");
 var time = questions.length * 15;
 
 var highscores = {};
+var questionNumber = 0;
 
+//displays current question
+function displayQuestion(){
+    if(questionNumber < questions.length){
+        question.textContent = questions[questionNumber].title;
+        console.log("Question title: " + questions[questionNumber].title);
+        for (var j = 0; j < questions[questionNumber].choices.length; j++){
+            console.log("questions[questionNumber].choices.length: " + questions[questionNumber].choices.length);
+            var option = document.createElement("button");
+            option.setAttribute("class", "btn btn-primary btn-option col-md-12");
+            option.textContent = questions[questionNumber].choices[j];
+            optionBox.appendChild(option);
+        }
+    }else{
+        return;
+    };
+    questionNumber++;
+};
 
 startQuiz.addEventListener("click", function(){
     console.log("Start button clicked");
@@ -44,21 +62,9 @@ startQuiz.addEventListener("click", function(){
         console.log(time);
         displayCounter.textContent = time;
     }, 1000);
-    for (var i = 0; i < questions.length; i++){
-        //gets rid of quiz info on page
-        quizInfo.textContent = "";
-        //sets title to question
-        question.textContent = questions[i].title;
-        console.log("Question title: " + questions[i].title);
-        //creates buttons for each option
-        for (var j = 0; j < questions[i].choices.length; j++){
-            console.log("questions[i].choices.length: " + questions[i].choices.length);
-            var option = document.createElement("button");
-            option.setAttribute("class", "btn btn-primary btn-option");
-            option.textContent = questions[i].choices[j];
-            optionBox.appendChild(option);
-        }
-    }
+    //gets rid of quiz info on page
+    quizInfo.textContent = "";
+    displayQuestion();
 });
 
 

@@ -12,8 +12,11 @@
     margin: auto;
     margin-top: 10px;
 }
-#btn-option{
+.btn-option{
     background-color:#5C246E; 
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 #time{
     text-align: right;
