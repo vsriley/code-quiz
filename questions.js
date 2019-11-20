@@ -31,6 +31,8 @@ var question = document.querySelector(".title");
 var quizInfo = document.querySelector(".info");
 var optionBox = document.querySelector("#answers");
 var displayCounter = document.querySelector("#counter");
+var results = document.querySelector("#results");
+var optionButtons = document.querySelectorAll(".btn-option");
 
 var time = questions.length * 15;
 
@@ -39,6 +41,10 @@ var questionNumber = 0;
 
 //displays current question
 function displayQuestion(){
+    //remove prior options
+    while(optionBox.firstChild){
+        optionBox.removeChild(optionBox.firstChild);
+    }
     if(questionNumber < questions.length){
         question.textContent = questions[questionNumber].title;
         console.log("Question title: " + questions[questionNumber].title);
@@ -48,15 +54,18 @@ function displayQuestion(){
             option.setAttribute("class", "btn btn-primary btn-option col-md-12");
             option.textContent = questions[questionNumber].choices[j];
             optionBox.appendChild(option);
+            console.log("questionNumber: " + questionNumber)
         }
     }else{
         return;
     };
-    questionNumber++;
 };
 
-startQuiz.addEventListener("click", function(){
+//quiz started
+startQuiz.addEventListener("click", function(event){
+    event.stopPropagation();
     console.log("Start button clicked");
+    startQuiz.remove();
     setInterval(function() {
         time--;
         console.log(time);
@@ -67,10 +76,24 @@ startQuiz.addEventListener("click", function(){
     displayQuestion();
 });
 
+document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains( 'btn-option' ) ) {
+        console.log("Option clicked");
+        console.log(event.target.textContent);
+        if(event.target.textContent === questions[questionNumber].answer){
+            results.textContent = "Correct";
+        }else{
+            results.textContent = "Wrong";
+            time = time - 15;
+        }
+    }
+    questionNumber++;
+    displayQuestion();
+}, false);
 
-//Page that shows each individual question
-//div at the bottom shows whether answer is right or wrong with line above
-//if answer is wrong deduct 15 seconds from time
+
+
+
 
 //title All Done!
 //Shows score
