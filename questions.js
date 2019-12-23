@@ -72,14 +72,21 @@ function finishedQuiz(){
 
     //create form which asks for users initials
 
-    //var form = document.createElement("form");
-    //var initials = document.createElement("input");
-    //initials.setAttribute("type", "text");
-    //initials.setAttribute("value", "Submit");
-    //initials.setAttribute("id", "initialForm");
-    //initials.textContent = "Enter your initials: ";
-    //form.appendChild(initials);
-    //optionBox.appendChild(form);
+    var form = document.createElement("form");
+    var initials = document.createElement("input");
+    var submitButton = document.createElement("button");
+    initials.setAttribute("type", "text");
+    initials.setAttribute("value", "Enter Your Initials Here");
+    initials.setAttribute("id", "initialForm");
+    initials.textContent = "Enter your initials: ";
+    submitButton.setAttribute("type", "submit");
+    submitButton.setAttribute("class", "btn btn-primary mb-2");
+    submitButton.setAttribute("style", "margin-left: 30px");
+    submitButton.innerHTML = "Submit";
+    form.appendChild(initials);
+    form.appendChild(submitButton);
+    optionBox.setAttribute("style", "text-align: center");
+    optionBox.appendChild(form);
 
 };
 
