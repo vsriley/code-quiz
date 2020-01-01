@@ -12,6 +12,13 @@
     margin: auto;
     margin-top: 10px;
 }
+#submitInitials{
+    background-color: #5C246E;
+}
+#clearButton{
+    background-color: #5C246E;
+    margin-top: 20px;
+}
 .btn-option{
     background-color:#5C246E; 
     margin-right: 20px;
@@ -30,4 +37,7 @@ a{
     border: 1px solid black;
     color: #5C246E;
     font-size: 20px;
+}
+#clearButtonDiv{
+    text-align: center;
 }

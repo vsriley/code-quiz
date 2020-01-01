@@ -1,6 +1,7 @@
 let highScores;
 let scoreList = [];
 const submitButton = document.getElementById("submitInitials");
+const clearButton = document.getElementById("clearButton");
 let formDiv = document.getElementById("form");
 let table = document.getElementById("highScoreTable");
 
@@ -61,7 +62,12 @@ submitButton.addEventListener("click", function(event){
     };
 });
 
-
+clearButton.addEventListener("click", function(event){
+    event.preventDefault();
+    localStorage.clear();
+    table.remove();
+});
 
 //Create Go Back button (restart quiz?) and Clear Highscores button
 //clear highscores button will clear local storage
+//make sure to edit read me!
