@@ -137,11 +137,3 @@ document.addEventListener('click', function (event) {
 
 
 
-//Enter Initials form with submit button
-
-//After entering submit go to High Score screen
-//display high score in correct order, all high scores in an array and use JSON.stringify...
-//Create Go Back button (restart quiz?) and Clear Highscores button
-//clear highscores button will clear local storage
-
-
