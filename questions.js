@@ -86,7 +86,7 @@ function finishedQuiz(){
     restartButton.setAttribute("type", "submit");
     restartButton.setAttribute("class", "btn btn-primary mb-2");
     restartButton.setAttribute("style", "margin-left: 30px");
-    restartButton.innerHTML = "Enter Your High Score";
+    restartButton.innerHTML = "Restart Quiz";
     optionBox.setAttribute("style", "text-align: center");
     optionBox.appendChild(restartButton);
 
@@ -112,23 +112,6 @@ startQuiz.addEventListener("click", function(event){
     displayQuestion();
 });
 
-restartButton.addEventListener("click", function(event){
-    event.stopPropagation();
-    console.log("Start button clicked");
-    startQuiz.remove();
-    var myInterval = setInterval(function() {
-        time--;
-        console.log(time);
-        displayCounter.textContent = time;
-    if(questionNumber >= questions.length){
-        clearInterval(myInterval);
-        finishedQuiz();
-    }
-    }, 1000);
-    //gets rid of quiz info on page
-    quizInfo.textContent = "";
-    displayQuestion();
-});
 
 document.addEventListener('click', function (event) {
     if ( event.target.classList.contains( 'btn-option' ) ) {
