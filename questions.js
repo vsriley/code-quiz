@@ -76,20 +76,11 @@ function finishedQuiz(){
     var submitButton = document.createElement("button");
     submitButton.setAttribute("type", "submit");
     submitButton.setAttribute("class", "btn btn-primary mb-2");
-    submitButton.setAttribute("style", "margin-left: 30px");
+    submitButton.setAttribute("style", "margin-left: 30px; background-color:#5C246E;");
     submitButton.setAttribute("onclick", "window.location.href = 'highscore.html'");
     submitButton.innerHTML = "Enter Your High Score";
     optionBox.setAttribute("style", "text-align: center");
     optionBox.appendChild(submitButton);
-
-    //figure out a way that when the restart button is clicked the quiz starts again
-    var restartButton = document.createElement("button");
-    restartButton.setAttribute("type", "submit");
-    restartButton.setAttribute("class", "btn btn-primary mb-2");
-    restartButton.setAttribute("style", "margin-left: 30px");
-    restartButton.innerHTML = "Restart Quiz";
-    optionBox.setAttribute("style", "text-align: center");
-    optionBox.appendChild(restartButton);
 
 
 };

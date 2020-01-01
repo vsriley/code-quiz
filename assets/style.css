@@ -12,6 +12,10 @@
     margin: auto;
     margin-top: 10px;
 }
+#restartButton{
+    background-color: #5C246E;
+    margin-top: 20px;
+}
 #submitInitials{
     background-color: #5C246E;
 }
@@ -39,5 +43,8 @@ a{
     font-size: 20px;
 }
 #clearButtonDiv{
+    text-align: center;
+}
+#restartButtonDiv{
     text-align: center;
 }
