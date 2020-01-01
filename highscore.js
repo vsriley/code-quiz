@@ -27,6 +27,20 @@ submitButton.addEventListener("click", function(event){
         scoreList.sort();
     };
     console.log(scoreList);
+
+    //generates title for the table
+    let titleRow = document.createElement("tr");
+    let titleTableName = document.createElement("td");
+    titleTableName.setAttribute("style", "border: 1px solid black; padding: 10px; font-weight: bold");
+    titleTableName.textContent = "Initials";
+    let titleTableScore = document.createElement("td");
+    titleTableScore.setAttribute("style", "border: 1px solid black; padding: 10px; font-weight: bold");
+    titleTableScore.textContent = "Score";
+    titleRow.appendChild(titleTableName);
+    titleRow.appendChild(titleTableScore);
+    table.appendChild(titleRow);
+
+    //generates rest of table with scores in order
     for (var j = scoreList.length-1; j >= 0; j--){
         for(var k = 0; k < highScores.length; k++){
             console.log("Score List: " + scoreList[j]);
@@ -34,8 +48,10 @@ submitButton.addEventListener("click", function(event){
             if(highScores[k].currentScore === scoreList[j]){
                 let row = document.createElement("tr");
                 let tableName = document.createElement("td");
+                tableName.setAttribute("style", "border: 1px solid black; padding: 10px");
                 tableName.textContent = highScores[k].name;
                 let tableScore = document.createElement("td");
+                tableScore.setAttribute("style", "border: 1px solid black; padding: 10px");
                 tableScore.textContent = highScores[k].currentScore;
                 row.appendChild(tableName);
                 row.appendChild(tableScore);
@@ -45,10 +61,7 @@ submitButton.addEventListener("click", function(event){
     };
 });
 
-//for each score that matches the object in the array then put that into the high score table
 
 
-//After entering submit go to High Score screen
-//display high score in correct order, all high scores in an array and use JSON.stringify...
 //Create Go Back button (restart quiz?) and Clear Highscores button
 //clear highscores button will clear local storage

@@ -25,3 +25,9 @@ a{
     color: #5C246E;
     text-decoration: none;
 }
+#highScoreTable{
+    margin: 0px auto; 
+    border: 1px solid black;
+    color: #5C246E;
+    font-size: 20px;
+}
