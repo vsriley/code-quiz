@@ -72,26 +72,47 @@ function finishedQuiz(){
 
     //create form which asks for users initials
 
-    var form = document.createElement("form");
-    var initials = document.createElement("input");
     var submitButton = document.createElement("button");
-    initials.setAttribute("type", "text");
-    initials.setAttribute("value", "Enter Your Initials Here");
-    initials.setAttribute("id", "initialForm");
-    initials.textContent = "Enter your initials: ";
     submitButton.setAttribute("type", "submit");
     submitButton.setAttribute("class", "btn btn-primary mb-2");
     submitButton.setAttribute("style", "margin-left: 30px");
-    submitButton.innerHTML = "Submit";
-    form.appendChild(initials);
-    form.appendChild(submitButton);
+    submitButton.setAttribute("onclick", "window.location.href = 'highscore.html'");
+    submitButton.innerHTML = "Enter Your High Score";
     optionBox.setAttribute("style", "text-align: center");
-    optionBox.appendChild(form);
+    optionBox.appendChild(submitButton);
+
+    //figure out a way that when the restart button is clicked the quiz starts again
+    var restartButton = document.createElement("button");
+    restartButton.setAttribute("type", "submit");
+    restartButton.setAttribute("class", "btn btn-primary mb-2");
+    restartButton.setAttribute("style", "margin-left: 30px");
+    restartButton.innerHTML = "Enter Your High Score";
+    optionBox.setAttribute("style", "text-align: center");
+    optionBox.appendChild(restartButton);
+
 
 };
 
 //quiz started
 startQuiz.addEventListener("click", function(event){
+    event.stopPropagation();
+    console.log("Start button clicked");
+    startQuiz.remove();
+    var myInterval = setInterval(function() {
+        time--;
+        console.log(time);
+        displayCounter.textContent = time;
+    if(questionNumber >= questions.length){
+        clearInterval(myInterval);
+        finishedQuiz();
+    }
+    }, 1000);
+    //gets rid of quiz info on page
+    quizInfo.textContent = "";
+    displayQuestion();
+});
+
+restartButton.addEventListener("click", function(event){
     event.stopPropagation();
     console.log("Start button clicked");
     startQuiz.remove();
