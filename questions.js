@@ -26,7 +26,7 @@ var questions = [
     }
   ];
 
-var startQuiz = document.querySelector("#startButton");
+var startQuiz = document.getElementById("startButton");
 var question = document.querySelector(".title");
 var quizInfo = document.querySelector(".info");
 var optionBox = document.querySelector("#answers");
@@ -66,6 +66,7 @@ function displayQuestion(){
 function finishedQuiz(){
     var score = displayCounter.textContent;
     console.log("Final Score: " + displayCounter.textContent);
+    localStorage.setItem("currentScore", score);
     question.textContent = "All Done! Your score is " + displayCounter.textContent;
     displayCounter.textContent = "";
     results.textContent = "";
@@ -142,3 +143,5 @@ document.addEventListener('click', function (event) {
 //display high score in correct order, all high scores in an array and use JSON.stringify...
 //Create Go Back button (restart quiz?) and Clear Highscores button
 //clear highscores button will clear local storage
+
+
