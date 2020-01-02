@@ -4,11 +4,12 @@
 
 This project was created to quiz a user and return a score based on the time it takes for them to finish the quiz.
 The user can input their initials and look at a high score page that is generated based on scores stored in local storage.
+The user can also clear the high score list and restart the quiz to take it again.
 This project uses a wide variety of JS tools such as timers and local storage.
 
-Overall I have been struggling to currently complete this project due to health issues. I have finished the portion that creates the quiz itself and generates their score.
-I have yet to complete the part where the user is asked for their initials in a form which is then stored in local storage and displayed with other high scores.
-I plan to complete this at a later date. I currently have it pseudocoded.
+The largest difficulty I faced was creating the form to input initials through JS. When I had it on the index.html page, it would 
+disappear as soon as someone clicked on it prior to entering their intials. I ended up moving it to the highscores.html page instead 
+and from there the high scores list is generated after intials are entered.
 
 ## Installation
 

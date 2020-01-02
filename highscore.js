@@ -23,7 +23,7 @@ submitButton.addEventListener("click", function(event){
     formDiv.remove();
     for (var i = 0; i < highScores.length; i++){
         //only add non duplicated numbers
-        if (scoreList.indexOf(highScores[i].currentScore) === -1){
+        if (scoreList.indexOf(highScores[i].currentScore) === -1 && highScores[i].currentScore != null){
             scoreList.push(highScores[i].currentScore);
         }
         scoreList.sort();
@@ -74,4 +74,3 @@ restartButton.addEventListener("click", function(event){
     window.location = 'index.html';
 });
 
-//make sure to edit read me!
